@@ -20,6 +20,8 @@ As your prowess increases, you gain different abilities. One of your unlockable 
 
 Any good idle/incremental game needs a prestige system, which will unlock as you progress through the game.
 
+This game is programmed using Javascript and HTML.
+
 
 
 
