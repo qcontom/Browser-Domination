@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<title>Browser Domination</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<script>
+
+	confirm("Press a button!")
+
+var width = 0
+
+function setColorB() {
+			document.getElementById("browserCoder").style.background = "#80bfff";
+		}
+
+
+function setColorA() {
+            document.getElementById("browserCoder").style.background = "#66b3ff";
+			setTimeout(setColorB, 100)        
+    }
+
+
+function removeBar() {
+	if (width == 100) {
+	document.getElementById("browserCoder").style.display="none";
+	document.getElementById("browserBar").style.display="none";
+	document.getElementById("browserBarCompletion").style.display="none";
+    confirm("Progress Complete.");
+	}
+}
+
+
+function updateBar() {
+	setColorA()
+	document.getElementById("browserBar").innerHTML = "";
+	var elem = document.getElementById("browserBarCompletion");   
+  elem.style.width = width + '%'; 
+  elem.innerHTML = width * 1 + '%';
+  if (width == 100) {
+  	removeBar()
+  } else {
+    width = width + 0.5;
+  }
+  
+}
+
+
+
+
+</script>
+<style type="text/css">
+
+	html, body {
+    	position:fixed;
+    	top:0;
+    	bottom:0;
+    	left:0;
+    	right:0;
+		background-color:#ffffff;
+		height:800px;
+		user-select: none;
+
+	}
+
+	#main {
+		position: absolute;
+		top:0px;
+		left:0%;
+		width:100%;
+		height:95%;
+		background: #ffffff;
+		border:solid 1px #ccccff;
+		background-image: url("Image1.jpg");
+		background-size: cover;
+		background-position: center center;
+	}
+
+	#mainTitle {
+		background-color: #ddd;
+		position: absolute;
+		top: 2%;
+		left: 2%;
+		width:325px;
+		height:25px;
+		border:solid 1px #ccccff;
+		font-weight: bold;
+		font-size:20px;
+		font-color: black;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	#browserCoder {
+		background: #b3d1ff;
+		position: absolute;
+		top: 50%;
+		left: 45%;
+		width:125px;
+		height:75px;
+		border:solid 1px #ccccff;
+		font-size:20px;
+		user-select: none;
+		text-align: center;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	#browserBar {
+		background-color: #ddd;
+		position: absolute;
+		top: 65%;
+		left: 0%;
+		width: 100%;
+		height: 30px;
+		text-align: center;
+		color: white;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	#browserBarCompletion {
+  	width: 0%;
+  	height: 30px;
+  	top: 65%;
+  	left: 0%;
+  	position: absolute;
+  	background-color: #4CAF50;
+  	text-align: center;
+  	line-height: 30px;
+  	color: white;
+  	transition: all 0.15s ease-in;
+  	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+	
+
+commarize(min)
+
+</style>
+<body>
+	<div id="main">
+
+		<div id="mainTitle">---Browser Domination Alpha 0.0.1---</div>
+
+		<div id="browserCoder" onclick="updateBar()">Code your browser</div>
+
+		<div id="browserBar"></div>
+			<div id="browserBarCompletion"></div> 
+
+	</div>
+</body>
+</html>
